@@ -73,9 +73,16 @@ void main() // <- void main 하나만 존재해야 한다.
 	// 4. num4 변수 = 리터럴 상수 / F (심볼릭)상수
 	// 5. num5 변수 = 리터럴 상수 + 리터럴 상수
 
-	int num1 = 14 + 5;
-	int num2 = 15 - 8;
-	int num3 =
+	int B = 14, C = 5, E = 45;
+	const int F = 4;
+
+	int num1, num2, num3, num4, num5;
+	num1 = B + C;
+	num2 = E + F;
+	num3 = 55 * B;
+	num4 = 32 / F;
+	num5 = 7 + 8;
+	
 
 
 
