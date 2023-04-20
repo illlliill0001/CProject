@@ -2,108 +2,107 @@
 
 void main()
 {
-#pragma region 상수 지시 포인터
-	// 포인터 변수를 상수로 선언하여, 포인터 변수를 가리키고 있는 주소에 
-	// 존재하는 값을 변경할 수 없도록 하는 것.
-
-	//int data = 100;
-	//int data1 = 20;
+#pragma region 배열
+	// 같은 자료형의 변수들로 이루어진 유한 집합 입니다. 
+	// 0   1   2   3   4
+	//[ ] [ ] [ ] [ ] [ ] 
+	//int array[5];
 	//
-	//const int* ptr = &data;
-	//
-	////*ptr = 300; (포인터 변수 역참조는 상수화가 되었기 때문에 에러 발생.)
-	//
-	//ptr = &data1;
-	//
-	//printf("ptr 변수의 값: %p\n", ptr);
-#pragma endregion
-
-#pragma region 포인터 상수
-	// 상수로 선언한 포인터이므로, 해당 변수의 값을 변경할 수 없지만,
-	// 다른 변수의 주소 값을 가리킬 수 있습니다. 
-	//
-	//int value1 = 30;
-	//int value2 = 60;
-	//
-	//int * const ptr1 = &value1;
-	//
-	//printf("value1의 값 : %d\n", value1);
-	//
-	//*ptr1 = 99999; // (OK)
-	//
-	//// ptr1 =&value2; (Error)
-	//
-	//
-	//printf("value1의 값 : %d\n", value2);
-
-#pragma endregion
-
-#pragma region siezeof(자료형)
-	//
-	//float health = 66.5f;
-	//short* pointer = NULL;
-	//
-	//printf("char의 크기 : %d\n", sizeof(char));
-	//printf("short의 크기 : %d\n", sizeof(short));
-	//printf("int의 크기 : %d\n", sizeof(int));
-	//printf("long의 크기 : %d\n", sizeof(long));
-	//
-	//printf("float의 크기 : %d\n", sizeof(float));
-	//printf("double의 크기 : %d\n", sizeof(double));
-	//printf("long double의 크기 : %d\n", sizeof(long double));
-	//
-	//printf("pointer의 크기 : %d\n", sizeof(pointer));
-	//
-#pragma endregion
-
-#pragma region 구구단
-
-	//for (int i = 1; i <= 9; i++)
+	//// 배열의 경우 첫 번째 원소(index)는 0부터 시작. 
+	//array[0] = 100;
+	//array[1] = 200;
+	//array[2] = 300;
+	//array[3] = 400;
+	//array[4] = 500; 
+	//// 배열의 크기는 컴파일이 되는 시점부터 고정된 메모리공간을 가지게 된다. 
+	//for (int i = 0; i < 5; i++)
 	//{
-	//	for (int j = 1; j <= 9; j++)
-	//	{
-	//		printf("%d * %d = %d\n", i, j, i * j);
-	//	}
-	//	printf("\n");
+	//	printf("array[%d]의 값 : %d\n", i, array[i]);
+	//}
+	//// [] [] []				[0]		[1]		[2]
+	//float itemList[3] = { 15.5f, 30.25f, 57.15f };
 	//
+	//// 배열의 메모리 공간은 포로그램이 실행되는 동안 변경할 수 없다.
+	//
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	printf("array[%d]의 값 : %f\n", i, itemList[i]);
 	//}
 	//
+	//// 배열의 크기는 생략할 수 있으며, 초기화 목록에서 설정한  요소에 따라 
+	//// 배열의 크기가 결정 됨.
+	//char string[ ] = { 'A', 'B', 'C' };
+	//
+	//// 배열의 이름은 시작 주소를 가리킵니다. 
+	//
+	//printf("string 배열의 주소 : %p\n", string);
+	//printf("string 배열 [0]의 주소 : %p\n", &string[0]);
+	//
 
+
+	// 배열과 포인터의 관계
+	//int data = 100;
+	//
+	//int* ptr = &data;
+	//
+	//printf("ptr 변수의 값: %p\n", ptr);
+	//printf("ptr + 1 : %p\n", ptr+1);
+	//
+	//// 2진수 
+	//
+	// 16진수 
+	// 1 ~ 9 
+	// 10 : A
+	// 11 : B
+	// 12 : C
+	// 13 : D
+	// 14 : E
+	// 15 : F
 #pragma endregion
 
-#pragma region Scanf(입력 함수)
-	// 표준 입력 함수로, 여러종류의 데이터를 다양한 서식에 맞추어 입력해주는 함수입니다. 
+#pragma region 시프트 연산자
+	/// 비트 값을 주어진 숫자만큼 부호 뱡향으로 이동시키는 연산자 
+   //
+	//char value = 10; // 0000 1010
+	//
+	//// 0000 1010
+	//// 0000 0101
+	//// 0000 0010
+	//
+	//printf("value 변수를 오른쪽으로 2번 비트 연산한 결과 : %d\n", value >> 2);
+	//printf("value 변수의 값 : %d\n", value);
+	//
+	//// >> : 비트값을 주어진 숫자만큼 오른쪽으로 이동시킴.
+	//// << : 비트 값을 주어진 숫자만큼 왼쪽으로 이동시킴. 
+	//
+	//printf("value 변수를 오른쪽으로 3번 비트 연산한 결과 : %d\n", value >> 3);
+#pragma endregion
 
-	// scanf <- SDL 검사 해제를 안하고 사용하게 되면 ERROR 발생. 
-
-	// scanf_s("입력할 변수의 서식", &변수)
-
+#pragma region 홀수와 짝수 
+	// 문제) 17 <- 입력 
+	// 홀수 출력
 	//int count = 0;
 	//
-	//printf("count 변수의 값을 입력해주세요. ");
-	//scanf_s("입력: %d", &count);
+	//scanf_s("%d", &count);
 	//
-	//// 표준 입력 함수는 입력을 수행할 때끼ㅏ지 다음 작업으로 넘어갈 수 없다.
-	//printf("count 변수의 값: %d", count);
+	//if (count % 2 == 0)
+	//{
+	//	printf("짝수");
+	//}
+	//else
+	//{
+	//	printf("홀수");
+	//}
 	//
-
-	//별 찍기
-	//문제) 내가 입력한 값에 따라 별이 찍히도록 구현해주세요.
-	// EX) 5입력
-	int num = 0;
-	printf("별: ");
-	scanf_s("%d", &num);
-
-	for (int i = 1; i <= num; i++)
-	{
-		for (int j = 0; j < i; j++)
-		{
-			printf("☆");
-		}
-		printf("\n");
-	}
+	//
 
 #pragma endregion
 
+#pragma region  네이밍 컨벤션
+
+//camel 
+
+#pragma endregion
 
 }
+
