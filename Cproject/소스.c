@@ -1,108 +1,95 @@
-#include <stdio.h> // 기본 입출력 헤더파일
+#include <stdio.h> 
+#include <limits.h>
+// #include 파일 처리 전처리문 
+// 시스템 파일이나 사용자 정의 파일을 프로그램 소스에 삽입하여 사용하기 위한 선언문.
+#pragma region 메크로
 
+	// 프로그램 내에서 특정한 데어터가 문자열로 정의 되고 처리되는 과정.
+	// 매크로는 컴파일러가 아닌 선행처리기에 의해서 처리되는 문장이기 때문에 명령문 끝에 ";"을 사용하지 않는다. 
+
+
+// 매크로는 메모리 공간 가지고 있지 않음.
+#pragma endregion
+
+// 전처리기란?
+ // 프로그램이 컴파일되기 이전에 프로그램에 대한 사전처리 과정입니다. 
 void main()
 {
-#pragma region 배열
-	// 같은 자료형의 변수들로 이루어진 유한 집합 입니다. 
-	// 0   1   2   3   4
-	//[ ] [ ] [ ] [ ] [ ] 
-	//int array[5];
+#pragma region 문자열
+	//// 연속적인 메모리 공간에 저장된 문자배열 
+	//// 문자열 -- 1. 포인터를 이용한 문자열 - 2. 배열을 이용한 문자열
+	////  1. 포인터를 이용한 문자열 : char * name = "Kim";  ※ 2. 배열을 이용한 문자열 : char data[5] = {data};
 	//
-	//// 배열의 경우 첫 번째 원소(index)는 0부터 시작. 
-	//array[0] = 100;
-	//array[1] = 200;
-	//array[2] = 300;
-	//array[3] = 400;
-	//array[4] = 500; 
-	//// 배열의 크기는 컴파일이 되는 시점부터 고정된 메모리공간을 가지게 된다. 
-	//for (int i = 0; i < 5; i++)
-	//{
-	//	printf("array[%d]의 값 : %d\n", i, array[i]);
-	//}
-	//// [] [] []				[0]		[1]		[2]
-	//float itemList[3] = { 15.5f, 30.25f, 57.15f };
+	//// 문자열의 경우 포인터를 이용하여 문자열 상수를 가리키도록 설정할 수 있습니다.  
+	//const char* name = "James";
 	//
-	//// 배열의 메모리 공간은 포로그램이 실행되는 동안 변경할 수 없다.
+	//// '%s' : 문자열을 출력하는 서식
+	//printf("name 변수의 값 : %p\n", name);
+	//printf("name 변수가 가리키는 값 : %s\n", name);
 	//
-	//for (int i = 0; i < 3; i++)
-	//{
-	//	printf("array[%d]의 값 : %f\n", i, itemList[i]);
-	//}
+	//// 문자열 상수는 데이터 영역의 읽기 전용 공간에 저장되기 때문에 문자열의 값을 변경할 수 없다. 
 	//
-	//// 배열의 크기는 생략할 수 있으며, 초기화 목록에서 설정한  요소에 따라 
-	//// 배열의 크기가 결정 됨.
-	//char string[ ] = { 'A', 'B', 'C' };
+	//name = "tom";
 	//
-	//// 배열의 이름은 시작 주소를 가리킵니다. 
+	//// 문자열은 맨 마지막에 무효의 문자(NULL)가 자동으로 포함된다.
+	//// NULL 문자의 역할은 문자열의 끝을 알려주는 것.
+	//printf("name 변수의 값 : %p\n", name);
+	//printf("name 변수가 가리키는 값 : %s\n", name); 
+	
+	//// 배열을 이용한 문자열 
+	//char string [ ] = { "Game" };
 	//
-	//printf("string 배열의 주소 : %p\n", string);
-	//printf("string 배열 [0]의 주소 : %p\n", &string[0]);
+	////문자열은 공백도 함께 메모리 공간에 포함된다.
+	//char string1[] = { "App l\0e"};
 	//
+	////문자 배열 사이에 무효의 문자를 넣게 되면 무효의 문자까지만 문자열을 출력합니다. 
+	//
+	//printf("string의 값 : %s\n", string);
+	//printf("string1의 값 : %s\n", string1);
+	//
+	//string[1] = 'b';
+	//string[3] = 'o';
+	//
+	//printf("string의 값 : %s\n", string);
+	//
+	// char 배열은 포인터 상수. 
 
 
-	// 배열과 포인터의 관계
-	//int data = 100;
-	//
-	//int* ptr = &data;
-	//
-	//printf("ptr 변수의 값: %p\n", ptr);
-	//printf("ptr + 1 : %p\n", ptr+1);
-	//
-	//// 2진수 
-	//
-	// 16진수 
-	// 1 ~ 9 
-	// 10 : A
-	// 11 : B
-	// 12 : C
-	// 13 : D
-	// 14 : E
-	// 15 : F
+
 #pragma endregion
+	// 매크로
+	//printf("매크로 SIZE의 값 : %d", SIZE);
 
-#pragma region 시프트 연산자
-	/// 비트 값을 주어진 숫자만큼 부호 뱡향으로 이동시키는 연산자 
-   //
-	//char value = 10; // 0000 1010
-	//
-	//// 0000 1010
-	//// 0000 0101
-	//// 0000 0010
-	//
-	//printf("value 변수를 오른쪽으로 2번 비트 연산한 결과 : %d\n", value >> 2);
-	//printf("value 변수의 값 : %d\n", value);
-	//
-	//// >> : 비트값을 주어진 숫자만큼 오른쪽으로 이동시킴.
-	//// << : 비트 값을 주어진 숫자만큼 왼쪽으로 이동시킴. 
-	//
-	//printf("value 변수를 오른쪽으로 3번 비트 연산한 결과 : %d\n", value >> 3);
-#pragma endregion
+#pragma region 최댓값과 최솟값
+	// 배열 [5] = {10,5,6,99,1};
+	int max = 0;
+	int min = INT_MAX;
+	// 최댓값 : 99 
+#define ARRAYSIZE 5
+	// 최솟값 : 1 
 
-#pragma region 홀수와 짝수 
-	// 문제) 17 <- 입력 
-	// 홀수 출력
-	//int count = 0;
-	//
-	//scanf_s("%d", &count);
-	//
-	//if (count % 2 == 0)
-	//{
-	//	printf("짝수");
-	//}
-	//else
-	//{
-	//	printf("홀수");
-	//}
-	//
-	//
+	int array[ARRAYSIZE] = { 10,5,6,99,1 };
+	for(int i = 0; i < ARRAYSIZE; i++)
+	{
+		if (max < array[i])
+		{
+			max = array[i];
+		}
+		if (min > array[i])
+		{
+			min = array[i];
+		}
+	
+
+	}
+	
+	printf("array의 최댓값: %d, array의 최솟값: %d", max, min);
+
+
+
 
 #pragma endregion
 
-#pragma region  네이밍 컨벤션
-
-//camel 
-
-#pragma endregion
 
 }
 
