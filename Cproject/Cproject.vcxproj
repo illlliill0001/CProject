@@ -151,6 +151,7 @@
     <ClInclude Include="(2023.4.19) 포인터 상수화.h" />
     <ClInclude Include="(2023.4.21) 문자열 .h" />
     <ClInclude Include="2023.4.24.h" />
+    <ClInclude Include="2023.4.25 재귀함수.h" />
     <ClInclude Include="sound.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
