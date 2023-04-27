@@ -1,106 +1,83 @@
 #include <stdio.h>
-
-#pragma region 전역 변수
-// 함수 외부에서 선언된 변수로 프로그램 어디에서나 접근 가능하며, 프로그램이 종료되어야만 메모리에서
-// 해제되는 변수입니다. 
-
-int globalValue = 5; 
-
-#pragma endregion
-
-#pragma region 정적 변수
-// 지역 변수와 젼역변수의 특징을 가지고 있으며 한번만 초기화가 이루어짐.
-
-void Calculator()
-{
-	static int value = 1;
-
-	value += 1;
-
-	printf("value의 값 : %d\n", value);
-
-}
-
-#pragma endregion
+#include <malloc.h>
 
 
-void Function()
-{
-	int count = 0; 
-
-	count += 1; 
-	globalValue += 1;
-
-	printf("count의 값 : %d\n", count);
-	printf("globalValue의 값: %d\n", globalValue);
-}
 
 void main()
 {
-#pragma region 지역 변수
-	// 불록 {} 내에서 선언된 변수로 불록 내에서만 유효하며, 불록이 종료되면 메모리에서 사라지는 변수
+#pragma region 동적 할당
+	// 프로그램을 싱해 중에 필요한 만큼 메모리를 할당하는 작업. 
 
-	// A지역
-	int data = 100;
+	// 동적 할당은 실행시간에 가변저긍로 메모리의 크기를 변경시킬 수 있으며 동적으로 메모리의 크키를 
+	//할당할 때 바이트 단위로 지정한다. 
+
+	//int* ptr = (int*)malloc(sizeof(int));
+
+
+	//메모리 동적 할당할 때 주소를 범용 포인터로 반환하기 때문에 지료형을 변환한 다음 메모리에 
+	//할당해야 한다. 
+	//*ptr = 1000;
+
+	//printf("동적 메모리 안에 있는 값 : %d\n", *ptr);
+
 	
-	// B 지역
-	{
-		int data = 20; 
-		printf("B 지역 data의 값: %d\n", data);
-	}
-
-	printf("A 지역 data의 값 : %d\n", data);
 
 #pragma endregion
-	//
-	//Function();
-	//Function();
-	//
-	//Calculator();
-	//Calculator();
-	//
-	//printf("정적 변수 attack의 값: %d", attack);
-#pragma region 범용 포인터
-	/// 자료형이 정해지지 않은 사앹로 모든 자료형을 저장할 수 있는 포인타
-   
-	//char chardata = 'x';
-	//int intdata = 10;
-	//float floatdata = 5.75f;
-	//
-	//void* ptr = NULL;
-	/
-		/
-		//ptr = &chardata;
-		////범용 포인터로 변수의 메모리에 접근하려면 범용포인터가 가리키는 자료형의 
-		////형변환 해주어야 한다.
-		//
-		//*(char*)ptr = 'M';
-		//printf("ptr이 가리키는 값: %c\n", *(char*)ptr);
-		/
-		//ptr = &intdata;
-		//*(int*)ptr = 99;
-		//printf("ptr이 가리키는 값: %c\n", *(int*)ptr);
 
-#pragma endregion
-#pragma region 약슈
-	   // 내가 입력한 순사의 약수를 출력하시요
-	   // 12 - 1,2,3,4,6,12
-	//int number = 0;
-	//	
-	//scanf_s("%d", &number);
+#pragma region ASCII 코드
+	// 영문 알파벳을 사용하는 대표적인 문자 인코딩입니다. 
+
+	//char alphabet = 65;
 	//
-	//for (int i = 1; i <= number; i++)
+	//printf("ASCII 코드 정수 값: %d\n", alphabet);
+	//printf("ASCII 코드 문자 값: %c\n", alphabet);
+	//
+	//// 문제 알파벳 a~z까지 출력
+	//
+	//for (int i = 97; i <= 122; i++)
 	//{
-	//
+	//	printf("%c\n",i);
 	//}
-#pragma endregion
-
-#pragma region shortcircuit
-//논리
-
 
 #pragma endregion
 
+#pragma region 허상포인터
+//이미 해제된 메모리 영역을 가리키는 포인터입니다.
+	//
+	//int* intptr = malloc(sizeof(int));
+	//
+	//*intptr = 300;
+	//
+	//printf("intptr이 가리키는 값: %d\n", *intptr);
+	//
+	//free(intptr);
+	//
+	//printf("해제된 intptr이 가리키는 값: %d\n", *intptr);
+	//
+	//intptr = NULL;
+	//
+	//*intptr = 100;
+	//
+#pragma endregion
+
+#pragma region 이중 포인터
+	//int a = 100;
+	//int* aptr = &a;
+	//int** daptr = &aptr;
+	//
+	//int b = 200;
+	//int* bptr = &b;
+	//int** dbptr = &bptr;
+	//
+	//int temp = 0;
+	//
+	// temp = **daptr;
+	// **dbptr = **daptr
+	//
+	//printf("a : %d b : %d\n", )
+#pragma endregion
 
 
-}	
+
+
+}
