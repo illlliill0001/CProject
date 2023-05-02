@@ -1,83 +1,65 @@
 #include <stdio.h>
-#include <malloc.h>
-
 
 
 void main()
 {
-#pragma region 동적 할당
-	// 프로그램을 싱해 중에 필요한 만큼 메모리를 할당하는 작업. 
+#pragma region 포인터배열
 
-	// 동적 할당은 실행시간에 가변저긍로 메모리의 크기를 변경시킬 수 있으며 동적으로 메모리의 크키를 
-	//할당할 때 바이트 단위로 지정한다. 
+	//const char* string[3];
 
-	//int* ptr = (int*)malloc(sizeof(int));
+	// 8byte 8byte 8byte
+	// []     []     [] 
 
-
-	//메모리 동적 할당할 때 주소를 범용 포인터로 반환하기 때문에 지료형을 변환한 다음 메모리에 
-	//할당해야 한다. 
-	//*ptr = 1000;
-
-	//printf("동적 메모리 안에 있는 값 : %d\n", *ptr);
+	//string[0] = "First";
+	//string[1] = "Second";
+	//string[2] = "Third";
+	//
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	printf("string[%d]의 값 : %s\n", i, string[i]);
+	//}
 
 	
 
-#pragma endregion
-
-#pragma region ASCII 코드
-	// 영문 알파벳을 사용하는 대표적인 문자 인코딩입니다. 
-
-	//char alphabet = 65;
+	//int a = 10;
+	//int b = 20;
+	//int c = 30;
 	//
-	//printf("ASCII 코드 정수 값: %d\n", alphabet);
-	//printf("ASCII 코드 문자 값: %c\n", alphabet);
+	//int* ptr1 = &a;
+	//int* ptr2 = &b;
+	//int* ptr3 = &c;
 	//
-	//// 문제 알파벳 a~z까지 출력
+	//int* arrayPtr[] = { ptr1, ptr2, ptr3 };
 	//
-	//for (int i = 97; i <= 122; i++)
-	//{
-	//	printf("%c\n",i);
-	//}
+	//printf("arrayPtr[0]의 값: %p\n", arrayPtr[0]);
+	//printf("arrayPtr[0]가 가리키는 값: %d\n", *arrayPtr[0]);
 
 #pragma endregion
 
-#pragma region 허상포인터
-//이미 해제된 메모리 영역을 가리키는 포인터입니다.
+#pragma region unsigned 부호없는 자료형
+	// 부호가 없는 자료형으로 부호 비트가 없고 자료를 저장할 수 있는 데이터 영역이 2배로 늘어나는 자료형 
+
+	//char data = 128;
 	//
-	//int* intptr = malloc(sizeof(int));
+	//unsigned char uData = 255;
 	//
-	//*intptr = 300;
+	//printf("data의 값 : %d\n", data);
+	//printf("data의 값 : %u\n", data);
 	//
-	//printf("intptr이 가리키는 값: %d\n", *intptr);
-	//
-	//free(intptr);
-	//
-	//printf("해제된 intptr이 가리키는 값: %d\n", *intptr);
-	//
-	//intptr = NULL;
-	//
-	//*intptr = 100;
-	//
+	//printf("uData의 값 : %d\n", uData);
+	//printf("uData의 값 : %u\n", uData);
+
+	int x = 0;
+	int y = 0;
+
+	for (int i = 1; i <= x && i <= y; i++)
+	{
+		if (x % y == 0 && y % i == 0)
+		{
+			printf("%d", i);
+		}
+	}
+
 #pragma endregion
-
-#pragma region 이중 포인터
-	//int a = 100;
-	//int* aptr = &a;
-	//int** daptr = &aptr;
-	//
-	//int b = 200;
-	//int* bptr = &b;
-	//int** dbptr = &bptr;
-	//
-	//int temp = 0;
-	//
-	// temp = **daptr;
-	// **dbptr = **daptr
-	//
-	//printf("a : %d b : %d\n", )
-#pragma endregion
-
-
-
 
 }
