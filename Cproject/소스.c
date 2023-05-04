@@ -1,86 +1,113 @@
 #include <stdio.h>
+#include <math.h>
 
-// enum 선언
-enum color
+struct player
 {
-	black,
-	red = 13
+	int hp;
+	float attack;
+	int x;
+	int y;
+};
 
+struct enemy
+{
+	int x;
+	int y;
 
 };
 
-enum state
+int main()
 {
-	idle,
-	attack,
-	die
+#pragma region 구조체 포인터
 
-};
+	//struct player player;
+	//
+	//struct player* ptrplayer = NULL;
+	//
+	//ptrplayer = &player;
+	//
+	//(*ptrplayer).hp = 100;
+	//(*ptrplayer).attack = 12.5f;
+	//
+	//printf("%d\n",(*ptrplayer).hp);
+	//printf("%f\n", (*ptrplayer).attack);
+	//
+	//ptrplayer->hp = 250;
+	//ptrplayer->attack = 22.75f;
+	//
+	//printf("%d\n", ptrplayer->hp);
+	//printf("%f\n", ptrplayer->attack);
+	//
 
-void main()
-{
-#pragma region 이차원 배열
-	// 배열의 요소로 또 다른 배열을 가지는 배열
 
-	// 2차원 배열은 행과 열로 구분되면 앞에 있는 배열은 행을 의미하고 뒤에 있는 배열은 열을 의미한다.
-	//int array2D[4][3] =
+
+
+#pragma endregion
+
+#pragma region 두 점 사이의 거리 
+	// 제곱근(sqrt)
+	//printf("루트 49: %lf\n", sqrt(49));
+
+	//거듭제곱근
+	//printf("2의 3승 : %lf\n", pow(2, 3));
+
+	struct player player1;
+	struct enemy enemy;
+
+	//player1.x = 0;
+	//player1.y = 0;
+	//
+	//enemy.x = 5;
+	//enemy.y = 7;
+	//
+	//int xDistance = player1.x - enemy.x;
+	//int yDistance = player1.y - enemy.y;
+	//
+	//float distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2));
+	//
+	//printf("캐릭터와 몬스터의 거리 : %f", distance);
+	//
+	//if (distance >= 5)
 	//{
-	//	{10,20,30},
-	//	{40,50,60},
-	//	{70,80,90},
-	//	{100,110,120}
+	//	printf("위험한 상태가 아닙니다\n");
+	//}
 	//
-	//};
+	//printf("전투상태");
+
+#pragma region 실수를 저장하는 방법 
+
+	// 부동 소수점 : 소수점의 위치를 고정하지 않고 소수점의 위치를 나타내는 방법입니다. 
 	//
-	//printf("array2D의 주소 : %p\n", array2D);
-	//printf("array2D[0][0]의 주소 : %p\n", &array2D[0][0]);
+	//float fdata = 1.3f;
+	//printf("fdata의 값: %.15f\n", fdata);
 	//
-	////배열 포인터 
-	//// 특정 사이즈의 배열만 가리킬수 있는 하나의 포인터
-	//int* ptr = NULL;
-	//ptr = array2D;
+	//double dData = 1.3;
+	//printf("dData의 값: %.15lf\n", dData);
 	//
-	//ptr = ptr + 1; 
+	//if (fdata == 1.3)
+	//{
+	//	printf("fdata의 값과 1.3f 값이 같다.");
 	//
-	//printf("ptr이 가리키는 값 : %d", *ptr);
+	//}
+	//else
+	//{
+	//	printf("fdata의 값과 1.3f 값이 같지 않다");
+	//}
+	//
+#pragma endregion
+
+
+	
+
+	
+
 
 
 
 #pragma endregion
 
-#pragma region 열거형(enum)
-	// 요소, 멤버라 불리는 
-
-	//enum color color;
-	//
-	//color = black;
-	//
-	//printf("color의 값: %d\n", color);
-	//
-	//color = red;
-	//
-	//printf
-
-	int select = 0;
-	int state = 0;
-
-	printf("플레이어의 상태를 설정해주세요: ");
-	scanf_s("%d", &select);
 
 
-	state = select;
 
-	switch (state)
-	{
-	case 0: printf("대기상태");
-		break;
-	case 1: printf("공격상태");
-		break;
-	case 2: printf("죽음상태");
-		break;
-	}
-
-
-#pragma endregion
 	return 0;
 }
