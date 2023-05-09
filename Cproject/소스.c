@@ -1,112 +1,80 @@
 #include <stdio.h>
-#include <math.h>
+#include <strig.h>
 
-struct player
+void function()
 {
-	int hp;
-	float attack;
+	printf("function() 함수\n");
+
+}
+
+void datalist()
+{
+	printf("datalist() 함수\n");
+}
+
+int damage(int x)
+{
+	return 0; 
+}
+
+void sort(void (*fPtr)())
+{
+	fPtr();
+
+}
+
+#pragma region typedef
+
+typedef unsigned int UINT;
+
+struct Player
+{
 	int x;
 	int y;
-};
+	char name[10];
+}Player1;
 
-struct enemy
-{
-	int x;
-	int y;
+#pragma endregion
 
-};
 
 int main()
 {
-#pragma region 구조체 포인터
+#pragma region 함수 포인터
+	// 함수의 주솟값을 저장하고 가리킬 수 있는 변수 입니다.
 
-	//struct player player;
-	//
-	//struct player* ptrplayer = NULL;
-	//
-	//ptrplayer = &player;
-	//
-	//(*ptrplayer).hp = 100;
-	//(*ptrplayer).attack = 12.5f;
-	//
-	//printf("%d\n",(*ptrplayer).hp);
-	//printf("%f\n", (*ptrplayer).attack);
-	//
-	//ptrplayer->hp = 250;
-	//ptrplayer->attack = 22.75f;
-	//
-	//printf("%d\n", ptrplayer->hp);
-	//printf("%f\n", ptrplayer->attack);
-	//
+	printf("function*()의 주솟값: %p\n", function);
 
+	void(*fPtr) ();
+	int(*intfPtr) (int);
 
+	fPtr = function;
+	intfPtr = damage;
 
+	fPtr();
+
+	printf("intfPtr의 값 : %d\n", intfPtr(10));
+	// 함수포인터는 함수의 봔환형과 매개변수의 타입이 일치해야 하므로, 함수포인터를 사용하며
+	// 동적으로 메모리를 할당할 수 없다. 
+	// fPtr() = damage; 오류남
+
+	fPtr = datalist;
+	fPtr();
 
 #pragma endregion
-
-#pragma region 두 점 사이의 거리 
-	// 제곱근(sqrt)
-	//printf("루트 49: %lf\n", sqrt(49));
-
-	//거듭제곱근
-	//printf("2의 3승 : %lf\n", pow(2, 3));
-
-	struct player player1;
-	struct enemy enemy;
-
-	//player1.x = 0;
-	//player1.y = 0;
+#pragma region typedef
+   //
+	//UINT count = 100;
+	//unsigned int value = 9999;
 	//
-	//enemy.x = 5;
-	//enemy.y = 7;
-	//
-	//int xDistance = player1.x - enemy.x;
-	//int yDistance = player1.y - enemy.y;
-	//
-	//float distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2));
-	//
-	//printf("캐릭터와 몬스터의 거리 : %f", distance);
-	//
-	//if (distance >= 5)
-	//{
-	//	printf("위험한 상태가 아닙니다\n");
-	//}
-	//
-	//printf("전투상태");
-
-#pragma region 실수를 저장하는 방법 
-
-	// 부동 소수점 : 소수점의 위치를 고정하지 않고 소수점의 위치를 나타내는 방법입니다. 
-	//
-	//float fdata = 1.3f;
-	//printf("fdata의 값: %.15f\n", fdata);
-	//
-	//double dData = 1.3;
-	//printf("dData의 값: %.15lf\n", dData);
-	//
-	//if (fdata == 1.3)
-	//{
-	//	printf("fdata의 값과 1.3f 값이 같다.");
-	//
-	//}
-	//else
-	//{
-	//	printf("fdata의 값과 1.3f 값이 같지 않다");
-	//}
-	//
+	//printf("count의 값 : %d", count);
+   //
+	//Player1; player1;
+	//player1.x = 10;
+	//player1.y = 5;
+	//player1.name = "Alistar";
+   //
+   //
 #pragma endregion
-
-
-	
-
-	
-
-
-
-
-#pragma endregion
-
-
 
 
 	return 0;
