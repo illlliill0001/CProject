@@ -158,11 +158,13 @@
     <ClInclude Include="2023.5.11.h" />
     <ClInclude Include="2023.5.15 랜덤함수.h" />
     <ClInclude Include="2023.5.16.h" />
+    <ClInclude Include="2023.5.19 더블 버퍼링.h" />
     <ClInclude Include="2023.5.2 포인터배열.h" />
     <ClInclude Include="2023.5.3 포인터배열.h" />
     <ClInclude Include="2023.5.4 실수를 저장하는 방법.h" />
     <ClInclude Include="2023.5.9.h" />
     <ClInclude Include="sound.h" />
+    <ClInclude Include="2023.5.18.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

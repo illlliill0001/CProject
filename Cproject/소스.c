@@ -3,55 +3,53 @@
 #include <conio.h>
 #include <Windows.h>
 
-int main()
+#define up 72
+#define left 75
+#define right 77
+#define down 80
+
+typedef struct player
 {
-#pragma region 파일 입출력 
-
-	// 파일 쓰기
-	// fopen("파일의 이름.확장자",파일모드)
-	//  w : 쓰기
-	//  r : 읽기
-	//  a : append  
-	// FILE* filePtr = fopen("DB.txt", "w");
-	//
-	// fputs("ID\n", filePtr);
-	// fputs("Password\n", filePtr);
-	//
-	// 파일 포인터 닫기
-	// fclose(filePtr);
-
-	int screen = 1;
-
-	// screen = 1 FULL 
-	// screen = 2 window 
-
-	SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE), CONSOLE_FULLSCREEN_MODE, 0);
-	while(1)
-	{
-
-
-	FILE* readPtr = fopen("monster.txt", "r");
-
-	char buffer[100000] = { 0, };
-
-	fread(buffer, 1, 100000, readPtr);
-	printf("%s", buffer);
-
-	fclose(readPtr);
-
-	syetem(cls);
+	int x;
+	int y;
 	
-		if (GetAsyncKeyState(VK_SPACE))
+};
+// 미로 맵 데이터
+char maze[11][11];
+// 미로 맵 생성
+void createmaze()
+{
+	//0: 빈공간("  "), 1:벽(ㅁ), 2:탈출구(◎) 
+
+	strcpy(maze[0],  "1111111111");
+	strcpy(maze[1],  "1000011111");
+	strcpy(maze[2],  "1011011111");
+	strcpy(maze[3],  "1111011111");
+	strcpy(maze[4],  "1110000111");
+	strcpy(maze[5],  "1110110111");
+	strcpy(maze[6],  "1110110111");
+	strcpy(maze[7],  "1100110011");
+	strcpy(maze[8],  "1110110111");
+	strcpy(maze[9],  "1100110002");
+	strcpy(maze[10], "1111111111");
+}
+
+void renderer()
+{
+	for (int i = 0; i < 11; i++)
+	{
+		for (int j = 0; j < 11; j++)
 		{
-			exit(0);
+			printf("%c", maze[i][j]);
 		}
 	}
-		
 
 
-#pragma endregion
+}
 
+int main()
+{
+	
 
-
-
+	return 0;
 }
