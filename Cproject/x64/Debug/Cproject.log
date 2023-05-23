@@ -1,3 +1,6 @@
 ﻿  소스.c
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(16,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'player' 왼쪽은 무시됩니다.
-  Cproject.vcxproj -> C:\Users\USER-PC\Desktop\CProject\Cproject\x64\Debug\Cproject.exe
+C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(18,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(26,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(62,8): warning C4013: 'time'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(77,18): warning C4013: 'random'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(89,3): warning C4013: 'sleep'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
