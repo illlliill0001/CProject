@@ -83,13 +83,19 @@
     <ClInclude Include="2023.5.16.h">
       <Filter>소스 파일\헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="2023.5.18.h">
+    <ClInclude Include="2023.5.18 파일입출력.h">
       <Filter>소스 파일\헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="2023.5.19 더블 버퍼링.h">
       <Filter>소스 파일\헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="2023.5.23.h">
+      <Filter>소스 파일\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="2023.5.23 빌드 과정.h">
+      <Filter>소스 파일\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="loadmameger.h">
       <Filter>소스 파일\헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

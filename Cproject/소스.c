@@ -1,29 +1,13 @@
+#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <conio.h>
 #include <Windows.h>
 #include <stdlib.h>
+#include "loadmameger.h"
 
 #define up 72
-#define left 75
-#define right 77
 #define down 80
-
-typedef struct Enemy
-{
-	int x;
-	int y;
-
-	const char* shape
-}Enemy;
-
-typedef struct Player
-{
-	int x, y;
-
-	const char* shape
-	
-} Player;
 
 
 void gotoxy(int x, int y)
@@ -32,66 +16,72 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
-void keyboard(Player * ptrplayer)
+typedef struct select
 {
+	int x, y; 
+	const char* shape;
 
+}select;
+
+void keyboard(select * (selectPtr)
+{
 	char key = 0;
-	
 	if (_kbhit())
 	{
 		key = _getch();
-		
+
 		if (key == -32)
 		{
 			key = _getch();
 		}
+		switch (key)
+		{
+		case up: selectPtr->y -= 5;
+			break;
+		case down: selectPtr->y += 5;
+			break;
+		}
+		system("cls");
 	}
-	switch (key)
-	{
-	case left: if (ptrplayer->x < 0) return;
-		ptrplayer->x -= 2;
-		break;
-	case right: if (ptrplayer->x > 30) return;
-		ptrplayer->x += 2;
-		break;
-	}
+
 }
 
-int randomX()
+void typing(unsigned int speed, const char * content)
 {
-	srand(time(NULL));
+	int i = 0;
 
-		int random = rand() % 31;
-
-		if (random % 2 == 1)
-		{
-			random += 1;
-		}
-		return random;
+	while (content[i] != '\0')
+	{
+		printf("%c", content[i++]);
+		fflush(stdout);
+		Sleep(speed);
+	}
 }
 
 int main()
 {
-	system("mode con cols = 30 line = 25");
-	Player player = { 10, 20 , "¡Ú" };
-	Enemy enemy = { random(), 0 , "¢Â"};
+	typing(250, "hello~");
+
+	int stage = 0;
+
+	select select = { 15 , 29, "¢Ñ" };
 
 	while (1)
 	{
-		keyboard(&player);
+		gotoxy(select.x, select.y);
+		keyboard(&select);
 
-		gotoxy(enemy.x, enemy.y++);
-		printf("%s", enemy.shape);
-
-		gotoxy(player.x, player.y);
-		printf("%s", player.shape);
-
-		sleep(100);
-
-		system("cls");
+		switch (stage)
+		{
+		case 0: ReadTextFile("resoure/DB.txt");
+			break;
+		case 1:  ReadTextFile("resoure/DB.txt");
+			break;
+		}
 
 
 	}
+	
 
-	return 0;
 }
+
