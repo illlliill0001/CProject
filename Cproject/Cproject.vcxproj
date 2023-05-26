@@ -162,6 +162,7 @@
     <ClInclude Include="2023.5.2 포인터배열.h" />
     <ClInclude Include="2023.5.23 빌드 과정.h" />
     <ClInclude Include="2023.5.23.h" />
+    <ClInclude Include="2023.5.25.h" />
     <ClInclude Include="2023.5.3 포인터배열.h" />
     <ClInclude Include="2023.5.4 실수를 저장하는 방법.h" />
     <ClInclude Include="2023.5.9.h" />

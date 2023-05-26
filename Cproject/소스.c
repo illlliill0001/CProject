@@ -1,87 +1,31 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <conio.h>
-#include <Windows.h>
-#include <stdlib.h>
-#include "loadmameger.h"
-
-#define up 72
-#define down 80
+#include <string.h>
 
 
-void gotoxy(int x, int y)
+int StringLenght(const char* string)
 {
-	COORD pos = { x, y };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-}
+	int count = 0;
 
-typedef struct select
-{
-	int x, y; 
-	const char* shape;
-
-}select;
-
-void keyboard(select * (selectPtr)
-{
-	char key = 0;
-	if (_kbhit())
+	for (int i = 0; string[i] < '\0'; i++)
 	{
-		key = _getch();
-
-		if (key == -32)
-		{
-			key = _getch();
-		}
-		switch (key)
-		{
-		case up: selectPtr->y -= 5;
-			break;
-		case down: selectPtr->y += 5;
-			break;
-		}
-		system("cls");
+		count++;
 	}
 
-}
-
-void typing(unsigned int speed, const char * content)
-{
-	int i = 0;
-
-	while (content[i] != '\0')
-	{
-		printf("%c", content[i++]);
-		fflush(stdout);
-		Sleep(speed);
-	}
+	return count++;
 }
 
 int main()
 {
-	typing(250, "hello~");
-
-	int stage = 0;
-
-	select select = { 15 , 29, "¢Ñ" };
-
-	while (1)
-	{
-		gotoxy(select.x, select.y);
-		keyboard(&select);
-
-		switch (stage)
-		{
-		case 0: ReadTextFile("resoure/DB.txt");
-			break;
-		case 1:  ReadTextFile("resoure/DB.txt");
-			break;
-		}
-
-
-	}
+	int a = StringLenght("Video");
 	
+	int value = StringLenght("Iphone");
+	printf("valueÀÇ °ª : %d\n", value);
 
+	char content1[20] = { "Hello" };
+	char content2[10] = { "Update" };
+
+
+	return 0;
 }
-

@@ -1,13 +1,2 @@
 ﻿  소스.c
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(24,2): error C2365: 'select': 재정의: 이전 정의는 '함수'입니다.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winsock.h(808,16): message : 'select' 선언을 참조하십시오.
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(26,22): error C2143: 구문 오류: ')'이(가) '*' 앞에 없습니다.
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(26,22): error C2143: 구문 오류: '{'이(가) '*' 앞에 없습니다.
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(27,1): error C2054: 'selectPtr' 다음에 '('가 필요합니다.
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(67,9): error C2146: 구문 오류: ';'이(가) 'select' 식별자 앞에 없습니다.
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(67,2): warning C4550: 식이 인수 목록이 없는 함수로 계산됩니다.
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(67,18): error C2059: 구문 오류: '{'
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(71,17): error C2224: '.x' 왼쪽에는 구조체/공용 구조체 형식이 있어야 합니다.
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(71,27): error C2224: '.y' 왼쪽에는 구조체/공용 구조체 형식이 있어야 합니다.
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(71,3): error C2198: 'gotoxy': 호출에 인수가 너무 적습니다.
-C:\Users\USER-PC\Desktop\CProject\Cproject\소스.c(72,3): warning C4013: 'keyboard'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  Cproject.vcxproj -> C:\Users\USER-PC\Desktop\CProject\Cproject\x64\Debug\Cproject.exe
